@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml"
+       version="1.0"
+       initial="hello">
+
+    <state id="off">
+        <!-- off state -->
+        <transition event="turn.on" target="on"/>
+    </state>
+    <state id="hello">
+        <onentry>
+            <log expr="'hello world'" />
+        </onentry>
+        <transition event="init" target="off"></transition>
+    </state>
+
+    <state id="on">
+        <transition event="turn.off" target="off"></transition>
+    </state>
+
+</scxml>
